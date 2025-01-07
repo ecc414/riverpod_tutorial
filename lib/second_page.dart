@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_tutorial/riverpod.dart';
-import 'package:riverpod_tutorial/second_page.dart';
 
-class Home extends ConsumerWidget {
-  const Home({super.key});
+import 'riverpod.dart';
+
+class SecondPage extends ConsumerWidget {
+  const SecondPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +18,7 @@ class Home extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
-              "Home",
+              "Seceond Page",
               textAlign: TextAlign.center,
             ),
             Text(
@@ -30,12 +30,8 @@ class Home extends ConsumerWidget {
               child: const Text("UP"),
             ),
             ElevatedButton(
-              onPressed: () => ref.read(numberProvider.notifier).state = ref.read(numberProvider.notifier).state - 1,
-              child: const Text("DOWN"),
-            ),
-            ElevatedButton(
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SecondPage())),
-              child: const Text("Second Page"),
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text("Back"),
             ),
           ],
         ),
