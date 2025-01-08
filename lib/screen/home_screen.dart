@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_tutorial/riverpod/state_provider.dart';
+import 'package:riverpod_tutorial/screen/future_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_notifier_provider_screen.dart';
 
@@ -41,6 +42,10 @@ class HomeScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const StateNotifierProviderScreen())),
               child: const Text("state notifier provider page"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FutureProviderScreen())),
+              child: const Text("future provider page"),
             ),
           ],
         ),
