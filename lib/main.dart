@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_tutorial/home.dart';
+import 'package:riverpod_tutorial/screen/home_screen.dart';
 
 void main() {
   runApp(
     const ProviderScope(
-      child: MaterialApp(home: Home()),
+      child: MaterialApp(home: HomeScreen()),
     ),
   );
 }

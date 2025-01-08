@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_tutorial/riverpod.dart';
-import 'package:riverpod_tutorial/second_page.dart';
+import 'package:riverpod_tutorial/riverpod/state_provider.dart';
+import 'package:riverpod_tutorial/screen/state_provider_screen.dart';
+import 'package:riverpod_tutorial/screen/state_notifier_provider_screen.dart';
 
-class Home extends ConsumerWidget {
-  const Home({super.key});
+class HomeScreen extends ConsumerWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,8 +35,12 @@ class Home extends ConsumerWidget {
               child: const Text("DOWN"),
             ),
             ElevatedButton(
-              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SecondPage())),
-              child: const Text("Second Page"),
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const StateProviderScreen())),
+              child: const Text("state provider page"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const StateNotifierProviderScreen())),
+              child: const Text("state notifier provider page"),
             ),
           ],
         ),
