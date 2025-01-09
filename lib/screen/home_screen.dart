@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_tutorial/riverpod/state_provider.dart';
+import 'package:riverpod_tutorial/screen/auto_dispose_modifier_screen.dart';
 import 'package:riverpod_tutorial/screen/family_modiifier_screen.dart';
 import 'package:riverpod_tutorial/screen/future_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_provider_screen.dart';
@@ -56,6 +57,10 @@ class HomeScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FamilyModifierScreen())),
               child: const Text("family modifier page"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AutoDisposeModifierScreen())),
+              child: const Text("auto dispose modifier page"),
             ),
           ],
         ),
