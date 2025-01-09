@@ -4,6 +4,7 @@ import 'package:riverpod_tutorial/riverpod/state_provider.dart';
 import 'package:riverpod_tutorial/screen/auto_dispose_modifier_screen.dart';
 import 'package:riverpod_tutorial/screen/family_modiifier_screen.dart';
 import 'package:riverpod_tutorial/screen/future_provider_screen.dart';
+import 'package:riverpod_tutorial/screen/listen_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_notifier_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/stream_provider_screen.dart';
@@ -13,7 +14,6 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final provider = ref.watch(numberProvider);
 
     return Scaffold(
       body: SizedBox(
@@ -25,18 +25,6 @@ class HomeScreen extends ConsumerWidget {
             const Text(
               "Home",
               textAlign: TextAlign.center,
-            ),
-            Text(
-              provider.toString(),
-              textAlign: TextAlign.center,
-            ),
-            ElevatedButton(
-              onPressed: () => ref.read(numberProvider.notifier).update((state) => state + 1),
-              child: const Text("UP"),
-            ),
-            ElevatedButton(
-              onPressed: () => ref.read(numberProvider.notifier).state = ref.read(numberProvider.notifier).state - 1,
-              child: const Text("DOWN"),
             ),
             ElevatedButton(
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const StateProviderScreen())),
@@ -61,6 +49,10 @@ class HomeScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AutoDisposeModifierScreen())),
               child: const Text("auto dispose modifier page"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ListenProviderScreen())),
+              child: const Text("listen provider page"),
             ),
           ],
         ),
