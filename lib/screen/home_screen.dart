@@ -4,6 +4,7 @@ import 'package:riverpod_tutorial/riverpod/state_provider.dart';
 import 'package:riverpod_tutorial/screen/future_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_notifier_provider_screen.dart';
+import 'package:riverpod_tutorial/screen/stream_provider_screen.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -46,6 +47,10 @@ class HomeScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FutureProviderScreen())),
               child: const Text("future provider page"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const StreamProviderScreen())),
+              child: const Text("stream provider page"),
             ),
           ],
         ),
