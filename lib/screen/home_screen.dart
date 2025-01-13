@@ -5,6 +5,7 @@ import 'package:riverpod_tutorial/screen/auto_dispose_modifier_screen.dart';
 import 'package:riverpod_tutorial/screen/family_modiifier_screen.dart';
 import 'package:riverpod_tutorial/screen/future_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/listen_provider_screen.dart';
+import 'package:riverpod_tutorial/screen/provider_screen.dart';
 import 'package:riverpod_tutorial/screen/select_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_provider_screen.dart';
 import 'package:riverpod_tutorial/screen/state_notifier_provider_screen.dart';
@@ -57,6 +58,10 @@ class HomeScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SelectProviderScreen())),
               child: const Text("select provider page"),
+            ),
+            ElevatedButton(
+              onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ProviderScreen())),
+              child: const Text("provider page"),
             ),
           ],
         ),
